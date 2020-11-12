@@ -53,11 +53,10 @@ ResouceManager::ResouceManager(ResouceManager&& obj1)
 
 ResouceManager& ResouceManager::operator=(ResouceManager&& obj1)
 {
-  if (this != &obj1)
-  {
+  if (this == &obj1)
+      return *this;
     delete wsk;
     wsk = obj1.wsk;
     obj1.wsk = nullptr;
-  }
-  return *this;
+    return *this;
 }
